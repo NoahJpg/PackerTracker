@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace PackerTracker.Models
 {
-  public class ClassName
+  public class Catalog
   {
     // properties, constructors, methods, etc. go here
   }
