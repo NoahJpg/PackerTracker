@@ -1,10 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PackerTracker.Models;
+using System.Collections.Generic;
+using System;
 
 namespace PackerTracker.Tests
 {
   [TestClass]
-  public class CatalogTests
+  public class TripTests
   {
     // Test methods go here
     [TestMethod]

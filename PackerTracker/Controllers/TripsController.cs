@@ -9,7 +9,7 @@ namespace PackerTracker.Controllers
     [HttpGet("/trips")]
     public ActionResult index()
     {
-      List<Trips> allTrips = Trips.GetAll();
+      List<Trip> allTrips = Trip.GetAll();
       return View(allTrips);
     }
 
@@ -22,17 +22,31 @@ namespace PackerTracker.Controllers
     [HttpGet("/trips/{id}")]
     public ActionResult Show(int id)
     {
-      Trips foundTrip = Trips.Find(id);
+      Trip foundTrip = Trip.Find(id);
       return View(foundTrip);
+      // replace with detail object
+    }
+
+    [HttpPost("/trips")]
+    public ActionResult Create(string description, string details)
+    {
+      Trip myTrip = new Trip(description);
+      Details myDetails = new Details(details, myTrip.Id);
+      return RedirectToAction("Index"); 
     }
 
     [HttpPost("/trips/delete")]
     public ActionResult DeleteAll()
     {
-      Trips.ClearAll();
+      Trip.ClearAll();
       return View();
     }
 
+    // [HttpGet("trips/{id}/details")]
+    // public ActionResult Details(string details)
+    // {
+    //   return View();
+    // }
 
   }
 }

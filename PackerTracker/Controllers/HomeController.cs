@@ -6,8 +6,8 @@ namespace PackerTracker.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/")]
-    public ActionResult Letter() 
+    [HttpGet("/")]
+    public ActionResult Index() 
     {
       return View();
     }
